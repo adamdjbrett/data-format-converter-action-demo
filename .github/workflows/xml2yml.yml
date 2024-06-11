@@ -37,7 +37,7 @@ jobs:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
           owner: adamdjbrett
-          repository: adamdjbrett/data-format-converter-action
+          repositories: adamdjbrett/data-format-converter-action
           
       - name: Data Format Converter Action
         uses: fabasoad/data-format-converter-action@v0
