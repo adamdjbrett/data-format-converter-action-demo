@@ -31,7 +31,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Data Format Converter Action
-        uses: fabasoad/data-format-converter-action@0.2.3
+        uses: fabasoad/data-format-converter-action@v0.2.3
         id: xml2yaml
         with:
           input: "person.xml"
