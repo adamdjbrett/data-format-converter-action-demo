@@ -30,12 +30,13 @@ jobs:
         run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
-      - name: Data Format Converter Action
+      - name: Use Github App
         uses: actions/create-github-app-token@v1
         id: generate-app-token
         with:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
+      - name: Data Format Converter Action
         uses: fabasoad/data-format-converter-action@v0
         with:
           input: "person.xml"
