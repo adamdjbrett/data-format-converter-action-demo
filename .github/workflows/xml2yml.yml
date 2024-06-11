@@ -37,5 +37,6 @@ jobs:
           input: "person.xml"
           from: "xml"
           to: "yml"
+          token: ${{ secrets.MY_GITHUB_TOKEN }}
       - name: Print result
         run: echo "${{ steps.xml2yaml.outputs.output }}"
