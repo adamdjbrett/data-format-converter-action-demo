@@ -42,3 +42,5 @@ jobs:
           token: ${{ steps.generate-app-token.outputs.token }}
       - name: Print result
         run: echo "${{ steps.xml2json.outputs.output }}"
+      - name: Save result
+        run: echo '${{ steps.xml2json.outputs.output }}' > actual.${{ matrix.to }}  
