@@ -34,10 +34,11 @@ jobs:
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
       # name: Data Format Converter Action
       - uses: fabasoad/data-format-converter-action@main
+        id: xml2yaml
         with:
           input: "person.xml"
           from: "xml"
           to: "yaml"
           token: ${{ steps.generate-app-token.outputs.token }}
       - name: Save result
-        run: echo '${{ steps.convert.outputs.output }}' > actual.${{ matrix.to }}
+        run: echo "${{ steps.yaml2json.outputs.output }}"
