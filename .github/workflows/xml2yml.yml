@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: XML2YML
+name: XML2JSON
 
 # Controls when the workflow will run
 on:
@@ -34,11 +34,11 @@ jobs:
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
       # name: Data Format Converter Action
       - uses: fabasoad/data-format-converter-action@main
-        id: xml2yaml
+        id: xml2json
         with:
           input: "person.xml"
           from: "xml"
-          to: "yaml"
+          to: "json"
           token: ${{ steps.generate-app-token.outputs.token }}
       - name: Print result
-        run: echo "${{ steps.xml2yaml.outputs.output }}"
+        run: echo "${{ steps.xml2json.outputs.output }}"
