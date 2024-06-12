@@ -31,18 +31,21 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Use Github App
-        uses: actions/create-github-app-token@main
-        id: generate-app-token
+       uses: actions/create-github-app-token@v1
+        id: app-token
         with:
           app-id: ${{ vars.APP_ID }}
-          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          private-key: ${{ secrets.PRIVATE_KEY }}
           owner: adamdjbrett
           repositories: adamdjbrett/data-format-converter-action
-          
+      - uses: ./actions/staging-tests
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+                 
       - name: Data Format Converter Action
         uses: fabasoad/data-format-converter-action@v0
         with:
           input: "person.xml"
           from: "xml"
           to: "yaml"
-          token: ${{ steps.generate-app-token.outputs.token }}
+          token: ${{ steps.app-token.outputs.token }}
