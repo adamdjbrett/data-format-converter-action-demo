@@ -38,7 +38,4 @@ jobs:
           from: "xml"
           to: "yaml"
           token: ${{ steps.generate-app-token.outputs.token }}
-      - name: Add & Commit
-        uses: EndBug/add-and-commit@main
-        with:
-          add: person.yml
+          output: person.yml
