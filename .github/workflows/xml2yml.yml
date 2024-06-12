@@ -43,4 +43,7 @@ jobs:
       - name: Print result
         run: echo "${{ steps.xml2json.outputs.output }}"
       - name: Save result
+        value: ${{ steps.xml2json.outputs.output }}
         run: echo '${{ steps.xml2json.outputs.output }}' > result.json  
+        
+        
