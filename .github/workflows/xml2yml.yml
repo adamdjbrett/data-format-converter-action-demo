@@ -35,8 +35,6 @@ jobs:
         with:
           app-id: ${{ vars.APP_ID }}
           private-key: ${{ secrets.APP_PRIVATE_KEY }}
-          owner: adamdjbrett
-          repositories: adamdjbrett/data-format-converter-action
       - uses: ./actions/staging-tests
         with:
           token: ${{ steps.app-token.outputs.token }}
