@@ -43,13 +43,10 @@ jobs:
       - name: Print result
         run: echo  '${{ steps.xml2json.outputs.output }}' > result.json
       - run: cat result.json
-  save-output:
-    steps:
       - name: Configure Git
         run: |
           git config --global user.name 'adamdjbrett'
           git config --global user.email '22662978+adamdjbrett@users.noreply.github.com'
-
       - name: Commit and push changes
         run: |
           git add result.json
