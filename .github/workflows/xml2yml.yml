@@ -39,3 +39,5 @@ jobs:
           from: "xml"
           to: "yaml"
           token: ${{ steps.generate-app-token.outputs.token }}
+      - name: Save result
+        run: echo '${{ steps.convert.outputs.output }}' > actual.${{ matrix.to }}
