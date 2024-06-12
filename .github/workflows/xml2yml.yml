@@ -44,10 +44,7 @@ jobs:
         run: echo  '${{ steps.xml2json.outputs.output }}' > result.json
       - run: cat result.json
   save-output:
-    - name: Run a command and save output to a file
-      run: |
-        cat result.json
-
+    
     - name: Configure Git
       run: |
         git config --global user.name 'adamdjbrett'
