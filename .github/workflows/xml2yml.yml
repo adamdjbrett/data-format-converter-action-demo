@@ -43,4 +43,4 @@ jobs:
       - name: Print result
         run: echo "${{ steps.xml2json.outputs.output }}"
       - name: Save result
-        outputs: echo '${{ steps.xml2json.outputs.output }}' > result.yml  
+        run: echo '${{ steps.xml2json.outputs.output }}' > result.json  
