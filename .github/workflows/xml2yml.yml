@@ -43,7 +43,10 @@ jobs:
       - name: Print result
         run: echo "${{ steps.xml2json.outputs.output }}"
       - name: Create JSON
-        shell: bash
-        run: echo '${{ steps.xml2json.outputs.output }}' > result.json  
-  
+         env:
+          BUILD_PATH: ${{steps.xml2json.compile.outputs.BUILD_PATH}}
+        run: |
+          echo SETTING VALUES TO OUTPUT
+          echo "The build_path is: ${BUILD_PATH}"
+          echo "build_path=${BUILD_PATH}" >> result.json
         
