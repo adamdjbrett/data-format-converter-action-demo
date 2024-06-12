@@ -40,5 +40,5 @@ jobs:
           from: "xml"
           to: "yaml"
           token: ${{ steps.generate-app-token.outputs.token }}
-      - name: Save result
-        run: echo "${{ steps.yaml2json.outputs.output }}"
+      - name: Print result
+        run: echo "${{ steps.xml2yaml.outputs.output }}"
