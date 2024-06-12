@@ -43,13 +43,7 @@ jobs:
       - name: Print result
         run: echo "${{ steps.xml2json.outputs.output }}"
       - name: Create JSON
-        run: echo '${{ steps.xml2json.outputs.output }}' > result.json  
-      - name: run output  
         shell: bash
-        env:
-          OUTPUT1: ${{ steps.xml2json.outputs.output }}
-          OUTPUT2: ${{ result.json }}
-        run: echo "$OUTPUT1 $OUTPUT2"
-
-        
+        run: echo '${{ steps.xml2json.outputs.output }}' > result.json  
+  
         
