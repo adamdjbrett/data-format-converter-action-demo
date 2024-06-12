@@ -38,4 +38,4 @@ jobs:
           from: "xml"
           to: "yaml"
           token: ${{ steps.generate-app-token.outputs.token }}
-          output: person.yml
+        outputs: person.yml
