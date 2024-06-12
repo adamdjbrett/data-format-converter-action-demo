@@ -41,4 +41,4 @@ jobs:
           to: "json"
           token: ${{ steps.generate-app-token.outputs.token }}
       - name: Print result
-        run: echo "${{ steps.xml2json.outputs.output }}" > result.json
+        run: echo  '${{ steps.xml2json.outputs.output }}' > result.json
