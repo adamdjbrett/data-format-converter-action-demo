@@ -43,4 +43,4 @@ jobs:
       - name: Print result
         run: echo "${{ steps.xml2json.outputs.output }}"
       - name: Save result
-        run: echo '${{ steps.xml2json.outputs.output }}' > actual.${{ matrix.to }}  
+        run: echo '${{ steps.xml2json.outputs.output }}' > result.yaml  
